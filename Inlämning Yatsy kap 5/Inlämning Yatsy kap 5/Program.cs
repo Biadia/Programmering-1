@@ -1,9 +1,11 @@
 ﻿// Yatsy
 using System.ComponentModel.Design;
 
+
 Random tärning = new Random();
 
-int[] slag = new int[5]; 
+int[] slag = new int[5];
+bool[] sparade = new bool[5];
 
 
 for (int x = 0; x < 1; x++) // Omgångar
@@ -16,11 +18,16 @@ for (int x = 0; x < 1; x++) // Omgångar
 
     for (int t = 0; t < 5; t++) // random 1-6 till tärning
     {
+        if (!sparade[t])
+        { 
+
         slag[t] = tärning.Next(1, 7);
+
+        }
         Console.Write($"{slag[t]} ");
     }
     Console.WriteLine();
-    for (int i = 1; i <= 6; i++) // Ränka poäng
+    for (int i = 1; i <= 6; i++) // Räkna poäng
     {
         int partal = 0;
         for (int j = 0; j < 5; j++) 
@@ -58,7 +65,7 @@ for (int x = 0; x < 1; x++) // Omgångar
                 
         }
     }
-    // Skriver ut poöngen
+    // Skriver ut poängen
     if (yatsy == true)
     {
         Console.WriteLine($"Yatsy!");
@@ -107,27 +114,26 @@ for (int x = 0; x < 1; x++) // Omgångar
 
    
 
-    Console.Write($"Vill du spara någon av tärningarna? ");
+    Console.Write($"Vill du spara någon av tärningarna? (j/n) ");
     string val = Console.ReadLine();
-    if (val != null)
+    if (val == "j")
     {
-        Console.Write("Vilken tärning vill du ha kvar? (1-5) ");
-        string spara = Console.ReadLine();
-        slag[0] = int.Parse("1");
-        slag[1] = int.Parse("2");
-        slag[2] = int.Parse("3");
-        slag[3] = int.Parse("4");
-        slag[4] = int.Parse("5");
+        for (int e = 0; e < 3; e++)
+        {
+            Console.Write("Vilken tärning vill du ha kvar? (1-5) \nExempel: '1 3' sparar tärning 1 och 3\n");
+            string spara = Console.ReadLine();
+
+            if (spara != null)
+            {
+               // Spara tärningar
+
+            }
+        }
+            
+        
     }
 
     Console.ReadLine();
     x--;
-    Console.Clear();
 }
-
-
-
-
-
-
 

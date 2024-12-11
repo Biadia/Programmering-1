@@ -3,7 +3,7 @@
 int styrka = grad.Next(1, 11);
 int smidighet = grad.Next(1, 11);
 int träffsäkerhet = grad.Next(1, 11);
-int intelligens = grad.Next(1, 11); 
+int intelligens = grad.Next(1, 11);
 
 // Hur kollar man vilken som är lägst respektive högst
 int svag = 3;
@@ -15,7 +15,8 @@ Console.WriteLine($"Välkommen till RPG Roller!\nDina förmågor:\nStyrka: {styr
 for (int i = 0; i < 1; i++) // Omgångar
 {
 
-    Console.WriteLine($"Din svagaste färdighet är: {svag}\nDin starkaste färdighet är: {stark} ");
+    //Console.WriteLine($"Din svagaste färdighet är: {svag}\nDin starkaste färdighet är: {stark} ");
+    Console.WriteLine();
     Console.WriteLine($"Välj:\n1: Slå på en färdighet\n2: Avlsuta"); // Vad vill man göra
     string val = Console.ReadLine();
 
@@ -34,61 +35,49 @@ for (int i = 0; i < 1; i++) // Omgångar
 
                         if (färdighet == "1")  // styrka
                         {
-                                  if (styrka < tärning) // Du lyckades
+                                  if (styrka > tärning) // Du lyckades
                                   {  
                                       Console.WriteLine($"Du har {styrka} i Styrka...\nOch slår en {tärning}...\nVilket innebär att du...lyckades!");
-                                      int nyStyrka = tärning;
-                                      Console.WriteLine($"Din nya styrka blir\nStyrka: {nyStyrka}");
                                   }
                                   else // Du misslyckades
                                   {
                                       Console.WriteLine($"Du har {styrka} i Styrka...\nOch slår en {tärning}...\nVilket innebär att du...misslyckades!");
-                                      Console.WriteLine($"Dina färdigheter i styrka stannar samma: {styrka}");
                                   }
                         }
                         else if (färdighet == "2") 
                         {
                         // smidighet
-                        if (smidighet < tärning) // Du lyckades
+                        if (smidighet > tärning) // Du lyckades
                         {
                             Console.WriteLine($"Du har {smidighet} i Smidighet...\nOch slår en {tärning}...\nVilket innebär att du...lyckades!");
-                            int nySmidighet = tärning;
-                            Console.WriteLine($"Din nya smidighet blir\nSmidighet: {nySmidighet}");
                         }
                         else // Du misslyckades
                         {
                             Console.WriteLine($"Du har {smidighet} i Smidighet...\nOch slår en {tärning}...\nVilket innebär att du...misslyckades!");
-                            Console.WriteLine($"Dina färdigheter i smidighet stannar samma: {smidighet}");
                         }
                     }
                         else if (färdighet == "3")
                         {
                         // Träffsäkerhet
-                        if (träffsäkerhet < tärning) // Du lyckades
+                        if (träffsäkerhet > tärning) // Du lyckades
                         {
                             Console.WriteLine($"Du har {träffsäkerhet} i Träffsäkerhet...\nOch slår en {tärning}...\nVilket innebär att du...lyckades!");
-                            int nyTräffsäkerhet = tärning;
-                            Console.WriteLine($"Din nya Träffsäkerhet blir\nTräffsäkerhet: {nyTräffsäkerhet}");
                         }
                         else // Du misslyckades
                         {
                             Console.WriteLine($"Du har {träffsäkerhet} i Träffsäkerhet...\nOch slår en {tärning}...\nVilket innebär att du...misslyckades!");
-                            Console.WriteLine($"Dina färdigheter i Träffsäkerhet stannar samma: {träffsäkerhet}");
                         }
                     }
                         else if (färdighet == "4")
                         {
                         // Intelligens
-                        if (intelligens < tärning) // Du lyckades
+                        if (intelligens > tärning) // Du lyckades
                         {
                             Console.WriteLine($"Du har {intelligens} i Intelligens...\nOch slår en {tärning}...\nVilket innebär att du...lyckades!");
-                            int nyIntelligens = tärning;
-                            Console.WriteLine($"Din nya Intelligens blir\nIntelligens: {nyIntelligens}");
                         }
                         else // Du misslyckades
                         {
                             Console.WriteLine($"Du har {intelligens} i Intelligens...\nOch slår en {tärning}...\nVilket innebär att du...misslyckades!");
-                            Console.WriteLine($"Dina färdigheter i Intelligens stannar samma: {intelligens}");
                         }
                     }
                 }
